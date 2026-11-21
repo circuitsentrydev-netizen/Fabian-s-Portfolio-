@@ -11,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="Fabian Forbay">
 <meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,8 +147,41 @@ section{scroll-margin-top:100px}
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+
+/* iOS Safari conservative rendering fallback */
+.contact-actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+.gradient{color:#42b5ff}
+@supports (-webkit-touch-callout:none){
+ html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+ header{position:relative;top:auto;height:auto;min-height:78px;background:#070b14;-webkit-backdrop-filter:none;backdrop-filter:none}
+ nav{min-height:78px;height:auto}
+ .hero{min-height:0}
+ .hero-inner{min-height:0}
+ .hero:before,.hero-photo img{-webkit-mask-image:none;mask-image:none}
+ .hero-photo img{object-fit:contain;object-position:center bottom}
+ .gradient{-webkit-text-fill-color:#42b5ff;background:none}
+ .wrap{width:calc(100% - 40px);max-width:1160px;padding-left:0;padding-right:0}
+}
+@media(max-width:680px){
+ .contact-actions .button{width:100%;min-height:46px}
+ .socials{flex-wrap:wrap;gap:14px 20px}
+ .hero-photo{overflow:hidden}
+ .hero-photo img{object-fit:contain}
+ nav ul{display:flex;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;max-width:100%;min-width:0}
+}
+@media(max-width:420px){
+ h1{font-size:clamp(2.4rem,11vw,3.1rem);overflow-wrap:anywhere}
+ .brand{white-space:normal}
+ .nav-cta{white-space:nowrap}
+ .stat strong{font-size:1rem}
+ .stat span{font-size:.65rem}
+ .fact{align-items:flex-start}
+ .fact span{max-width:58%;overflow-wrap:anywhere}
+ .contact-actions{align-items:stretch}
+}
+
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Fabian Forbay","jobTitle":"Full-Stack Developer","email":"circuitsentrydev@gmail.com","sameAs":["https://github.com/circuitsentrydev-netizen"],"address":{"@type":"PostalAddress","addressLocality":"Durban","addressCountry":"ZA"},"worksFor":{"@type":"Organization","name":"CircuitSentry Dev"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Fabian Forbay","jobTitle":"Full-Stack Developer","email":["circuitsentrydev@gmail.com","fabianforbay321@gmail.com"],"telephone":"+27680459825","sameAs":["https://github.com/circuitsentrydev-netizen"],"address":{"@type":"PostalAddress","addressLocality":"Durban","addressCountry":"ZA"},"worksFor":{"@type":"Organization","name":"CircuitSentry Dev"}}</script>
 </head>
 <body>
 <header><nav class="wrap" aria-label="Main navigation">
@@ -163,13 +197,13 @@ section{scroll-margin-top:100px}
 <div class="role">Building innovative solutions for a smarter tomorrow.</div>
 <p class="lead">Full-stack developer and founder of CircuitSentry Dev, focused on creating thoughtful web, mobile and automation solutions. I turn ideas into practical digital products with clean interfaces and dependable engineering.</p>
 <div class="actions"><a class="button primary" href="#projects">⌘ &nbsp; View my projects&nbsp; →</a><a class="button outline" href="#contact">✉ &nbsp; Get in touch</a></div>
-<div class="socials"><a href="https://github.com/circuitsentrydev-netizen" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:circuitsentrydev@gmail.com">Email ↗</a><a href="https://la-villa-nu.vercel.app/" target="_blank" rel="noreferrer">La Villa ↗</a></div>
+<div class="socials"><a href="https://github.com/circuitsentrydev-netizen" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="mailto:circuitsentrydev@gmail.com">Email ↗</a><a href="https://wa.me/27680459825" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="tel:+27680459825">Call ↗</a></div>
 </div>
 <div class="hero-photo"><div class="photo-frame"></div><img src="fabian.jpg" alt="Portrait of Fabian Forbay" fetchpriority="high" decoding="async"></div>
 </div></section>
 <div class="stats"><div class="wrap" style="display:contents"><div class="stat"><strong>Full-stack</strong><span>Web development</span></div><div class="stat"><strong>Cybersecurity</strong><span>Academic foundation</span></div><div class="stat"><strong>Founder</strong><span>CircuitSentry Dev</span></div></div></div>
-<section id="about"><div class="wrap about-grid"><div class="about-copy"><div class="section-kicker">A little about me</div><h2 class="section-title">Turning ideas into <span class="gradient">real products.</span></h2><p>I'm Fabian Forbay, a Durban-based IT graduate from the Durban University of Technology with a Diploma in Cybersecurity. My background in networking and security shapes how I approach software: understand the system, build carefully and think about reliability from the start.</p><p>I'm developing my full-stack skills through Mlab CodeTribe while growing CircuitSentry Dev, where I work on websites, applications, device services and custom digital solutions.</p><p>I enjoy solving practical problems, learning new technologies and taking projects from an early idea through to a working product.</p></div>
-<div class="about-panel"><h3>Quick profile</h3><div class="fact"><strong>Based in</strong><span>Durban, South Africa</span></div><div class="fact"><strong>Education</strong><span>Diploma in Cybersecurity · DUT</span></div><div class="fact"><strong>Current focus</strong><span>Full-stack development</span></div><div class="fact"><strong>Company</strong><span>CircuitSentry Dev</span></div></div>
+<section id="about"><div class="wrap about-grid"><div class="about-copy"><div class="section-kicker">A little about me</div><h2 class="section-title">Turning ideas into <span class="gradient">real products.</span></h2><p>I'm Fabian Forbay, a Durban-based developer with a Diploma in Cybersecurity from Alison and a Higher Certificate from the Durban University of Technology (DUT). My background in networking and security shapes how I approach software: understand the system, build carefully and think about reliability from the start.</p><p>I have also undertaken Diploma in Information Technology studies that I did not complete. I value being transparent about my academic journey while continuing to build practical experience and full-stack skills through Mlab CodeTribe and CircuitSentry Dev.</p><p>I enjoy solving practical problems, learning new technologies and taking projects from an early idea through to a working product.</p></div>
+<div class="about-panel"><h3>Quick profile</h3><div class="fact"><strong>Based in</strong><span>Durban, South Africa</span></div><div class="fact"><strong>Diploma</strong><span>Cybersecurity · Alison</span></div><div class="fact"><strong>Higher Certificate</strong><span>Durban University of Technology</span></div><div class="fact"><strong>Additional studies</strong><span>Diploma in IT · not completed</span></div><div class="fact"><strong>Current focus</strong><span>Full-stack development</span></div><div class="fact"><strong>Company</strong><span>CircuitSentry Dev</span></div></div>
 </div></section>
 <section class="skills" id="skills"><div class="wrap"><div class="section-kicker">My toolkit</div><h2 class="section-title">Technologies I work with</h2><p class="section-intro">A practical mix of frontend, backend, data and delivery tools used across my projects.</p><div class="skill-grid">
 <div class="skill"><h3>Frontend</h3><p>React · TypeScript · Redux Toolkit · HTML · CSS · Tailwind · Vite</p></div>
@@ -186,7 +220,7 @@ section{scroll-margin-top:100px}
 <article class="project"><span class="number">06 / CLIENT SOLUTIONS</span><div class="project-visual"><svg viewBox="0 0 640 300" role="img" aria-label="Illustration of a digital business ordering platform"><defs><linearGradient id="order" x2="1" y2="1"><stop stop-color="#164d51"/><stop offset="1" stop-color="#0b1826"/></linearGradient></defs><rect width="640" height="300" fill="url(#order)"/><rect x="55" y="38" width="530" height="224" rx="14" fill="#0b1723" stroke="#55c6ad" stroke-opacity=".4"/><rect x="76" y="58" width="488" height="32" rx="7" fill="#163c40"/><circle cx="94" cy="74" r="5" fill="#54d6b5"/><rect x="110" y="70" width="108" height="7" rx="3" fill="#b0ddd2"/><rect x="460" y="67" width="85" height="15" rx="7" fill="#1e766b"/><rect x="77" y="108" width="205" height="130" rx="8" fill="#153b3c"/><rect x="91" y="122" width="177" height="70" rx="6" fill="#68a98e"/><path d="M91 182l42-36 32 20 39-28 64 54" fill="#d1e6c9"/><rect x="91" y="202" width="105" height="7" rx="3" fill="#c5e4d8"/><rect x="91" y="217" width="72" height="5" rx="3" fill="#7eb6a4"/><rect x="300" y="110" width="245" height="15" rx="7" fill="#d6f3eb" opacity=".85"/><rect x="300" y="137" width="150" height="7" rx="3" fill="#6b9c91"/><rect x="300" y="160" width="245" height="1" fill="#35595a"/><rect x="300" y="174" width="180" height="8" rx="4" fill="#b6d9d0"/><rect x="300" y="191" width="230" height="6" rx="3" fill="#658c85"/><rect x="300" y="211" width="92" height="20" rx="7" fill="#20a58b"/><text x="315" y="225" fill="#edfffa" font-size="9" font-family="Arial">PLACE ORDER</text></svg></div><h3>Business ordering apps</h3><p>Custom online ordering experiences for local businesses, helping customers browse offerings and submit orders with less friction.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
 </div><p style="margin-top:25px;color:var(--muted)">More experiments and code on <a href="https://github.com/circuitsentrydev-netizen" style="color:var(--blue2)">my GitHub profile ↗</a>.</p></div></section>
 <section class="services" id="services"><div class="wrap"><div class="section-kicker">What I can help with</div><h2 class="section-title">Digital solutions, built with purpose.</h2><div class="service-grid"><article class="service"><div class="icon">⌘</div><h3>Websites & web apps</h3><p>Responsive business websites, dashboards and custom web applications.</p></article><article class="service"><div class="icon">▣</div><h3>Mobile experiences</h3><p>Mobile-first interfaces and application development with modern tools.</p></article><article class="service"><div class="icon">⌁</div><h3>Technical support</h3><p>Device support, troubleshooting and practical technology solutions.</p></article></div></div></section>
-<section id="contact"><div class="wrap"><div class="contact-box"><div class="section-kicker">Have a project in mind?</div><h2 class="section-title">Let's build something <span class="gradient">meaningful.</span></h2><p>I'm open to junior developer opportunities, collaborations and client projects. Tell me what you're working on.</p><a class="button primary" href="mailto:circuitsentrydev@gmail.com">Contact me · circuitsentrydev@gmail.com ↗</a></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact-box"><div class="section-kicker">Have a project in mind?</div><h2 class="section-title">Let's build something <span class="gradient">meaningful.</span></h2><p>I'm open to junior developer opportunities, collaborations and client projects. Tell me what you're working on.</p><div class="contact-actions"><a class="button primary" href="mailto:circuitsentrydev@gmail.com">Primary email ↗</a><a class="button outline" href="mailto:fabianforbay321@gmail.com">Alternative email ↗</a><a class="button outline" href="tel:+27680459825">Call 068 045 9825</a><a class="button outline" href="https://wa.me/27680459825" target="_blank" rel="noopener noreferrer">WhatsApp me ↗</a></div></div></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>© 2026 Fabian Forbay · Durban, South Africa</span><span>Built with curiosity by CircuitSentry Dev.</span></div></footer>
 </body></html>
